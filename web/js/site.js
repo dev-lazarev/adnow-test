@@ -24,7 +24,28 @@ $( ".cell20" ).on( "click", function() {
 });
 
 $('#save').on('click', function () {
-    console.log(333);
+    var array = {};
+    var className = '';
+    for (var i=0;i<20;i++){
+        for (var j=0;j<20;j++){
+            var el = $( '#i'+i+'j'+j );
+            if(el.hasClass('blank')){
+                className = 'b';
+            }
+
+            if(el.hasClass('red')){
+                className = 'r';
+            }
+            if(el.hasClass('yellow')){
+                className = 'y';
+            }
+            if(el.hasClass('green')){
+                className = 'g';
+            }
+            array[i][j] = className;
+        }
+    }
+    console.log(array);
 });
 
 $('#form').on('submit', function () {
