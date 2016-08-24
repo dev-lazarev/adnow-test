@@ -45,7 +45,7 @@ class AjaxController extends Controller
         $id = Yii::$app->request->get('id', '');
 
         $mosaicModel = new Mosaic();
-        $mosaic = $mosaicModel->getFromId(new \MongoId($id));
+        $mosaic = $mosaicModel->getFromId(new \MongoDB\BSON\ObjectID($id));
 
 
         if (!empty($mosaic)) {
@@ -76,7 +76,7 @@ class AjaxController extends Controller
                 $result['id'] = (string)$id;
             }
         }else{
-            $mosaicModel->update(new \MongoId($id), [$array=>$array]);
+            $mosaicModel->update(new \MongoDB\BSON\ObjectID($id), [$array=>$array]);
             $result['status'] = 'true';
             $result['message'] = 'update';
         }
@@ -95,7 +95,7 @@ class AjaxController extends Controller
 
         $mosaicModel = new Mosaic();
         if(!empty($id)){
-            $mosaicModel->remove(['_id'=>new \MongoId($id)]);
+            $mosaicModel->remove(['_id'=>new \MongoDB\BSON\ObjectID($id)]);
             $result['status'] = 'true';
             $result['message'] = 'delete';
         }
