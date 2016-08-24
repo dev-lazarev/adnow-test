@@ -30,10 +30,11 @@ $this->title = 'My Yii Application';
                 ?>
                 <p><a class="btn btn-default" href="#" id="save">save</a></p>
 
-                <form class="form-inline" id="form">
+                <form class="form-inline" id="form" style="display: none">
                     <div class="form-group">
                         <label for="name" class="sr-only">name</label>
-                        <input type="text" class="form-control" id="name" placeholder="name">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                        <input type="hidden" class="form-control" id="id"  name="id" value="">
                     </div>
                     <button type="submit" class="btn btn-default">ok</button>
                 </form>

@@ -26,6 +26,9 @@ $( ".cell20" ).on( "click", function() {
 $('#save').on('click', function () {
     var array = [];
     var className = '';
+    var idElement  = $('#id');
+    var formElement  = $('#form');
+    var id  = $('#id').val();
     for (var i=0;i<20;i++){
         array[i] = [];
         for (var j=0;j<20;j++){
@@ -48,6 +51,10 @@ $('#save').on('click', function () {
         }
     }
     console.log(array);
+
+    if(id==''){
+        formElement.show();
+    }
 });
 
 $('#form').on('submit', function () {
