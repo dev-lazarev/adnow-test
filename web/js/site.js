@@ -104,6 +104,17 @@ $('.mosaicloader').on('click', function () {
 
 });
 
+$('.mosaicremove').on('click', function () {
+    var id = $( this ).data('id');
+
+    $.post("/ajax/remove", { id: id},
+        function(data){
+            alert(data);
+        }
+    );
+
+});
+
 $('#form').on('submit', function () {
     console.log(123);
     var nameElement  = $('#name');
