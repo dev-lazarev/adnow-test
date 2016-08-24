@@ -67,7 +67,7 @@ $('#save').on('click', function () {
     }
 });
 
-$('#mosaicloader').on('click', function () {
+$('.mosaicloader').on('click', function () {
     var id = $( this ).data('id');
 
 
