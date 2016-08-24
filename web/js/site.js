@@ -74,8 +74,8 @@ $('.mosaicloader').on('click', function () {
     $.get( "ajax/get", { id: id } )
         .done(function( data ) {
 
-            var arr = data.array;
-            console.log(arr);
+            var arr = data['array'];
+            console.log(data);
             var e = '';
             for (var i=0;i<20;i++){
 
