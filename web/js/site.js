@@ -50,6 +50,7 @@ function elToArray() {
     }
     return array;
 }
+
 $('#save').on('click', function () {
     var array = [];
 
@@ -64,6 +65,16 @@ $('#save').on('click', function () {
     }else{
         update(id);
     }
+});
+
+$('#mosaicloader').on('click', function () {
+    var id = $( this ).data('id');
+
+
+    $.get( "ajax/get", { id: id } )
+        .done(function( data ) {
+            console.log(data);
+        });
 });
 
 $('#form').on('submit', function () {
