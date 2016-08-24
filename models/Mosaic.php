@@ -67,11 +67,11 @@ class Mosaic extends AbstractMongoModel
         if (!empty($data)) {
             foreach ($data as $name => $value) {
                 if ($name != '_id') {
-                    $update['$set'][$name] = $value;
+                    $update[$name] = $value;
                 }
             }
         }
-        $update['$set']['createdate'] = new \MongoDB\BSON\UTCDateTime(microtime(true));
+        $update['createdate'] = new \MongoDB\BSON\UTCDateTime(microtime(true));
 
         $result = $this->insert(
             $update
