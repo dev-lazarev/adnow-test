@@ -29,4 +29,5 @@ $('#save').on('click', function () {
 
 $('#form').on('submit', function () {
     console.log(123);
+    return false;
 });
