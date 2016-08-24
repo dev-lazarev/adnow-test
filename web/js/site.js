@@ -24,10 +24,12 @@ $( ".cell20" ).on( "click", function() {
 });
 
 $('#save').on('click', function () {
-    var array = {};
+    var array = [];
     var className = '';
     for (var i=0;i<20;i++){
+        array[i] = [];
         for (var j=0;j<20;j++){
+            array[i][j] = '';
             var el = $( '#i'+i+'j'+j );
             if(el.hasClass('blank')){
                 className = 'b';
