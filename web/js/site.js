@@ -109,6 +109,7 @@ $('.mosaicremove').on('click', function () {
 
     $.post("/ajax/delete", { id: id},
         function(data){
+            $('#id'+id).hide();
             alert(data);
         }
     );

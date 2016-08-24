@@ -56,7 +56,7 @@ $this->title = 'My Yii Application';
                     <?php
                     foreach ($mosaics as $mosaic){
                         ?>
-                        <tr>
+                        <tr id="id<?=(string)$mosaic->_id?>">
                             <th><?=$mosaic->name?></th>
                             <th><?=$mosaic->createdate?></th>
                             <th><?=isset($mosaic->updatedate)?$mosaic->updatedate:'-'?></th>
