@@ -73,6 +73,28 @@ $('.mosaicloader').on('click', function () {
 
     $.get( "ajax/get", { id: id } )
         .done(function( data ) {
+
+            var arr = data.array;
+            var e = '';
+            for (var i=0;i<20;i++){
+
+                for (var j=0;j<20;j++){
+                    e = arr.shift();
+                    $( '#i'+i+'j'+j ).removeClass('blank').removeClass('red').removeClass('yellow').removeClass('green');
+                    if(e=='b'){
+                        el.addClass('blank')
+                    }
+                    if(e=='r'){
+                        el.addClass('red')
+                    }
+                    if(e=='y'){
+                        el.addClass('yellow')
+                    }
+                    if(e=='g'){
+                        el.addClass('green')
+                    }
+                }
+            }
             console.log(data);
         });
 });
