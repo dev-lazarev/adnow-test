@@ -63,7 +63,7 @@ class AjaxController extends Controller
         $result = ['status' => 'false'];
         $id = Yii::$app->request->post('id', '');
         $name = Yii::$app->request->post('name', '');
-        $date = Yii::$app->request->post('date', '');
+        $time = Yii::$app->request->post('time', '');
         $array = Yii::$app->request->post('array', []);
 
         $mosaicModel = new Mosaic();
@@ -71,7 +71,7 @@ class AjaxController extends Controller
             if(!empty($mosaicModel->getFromName($name))){
                 $result['error'] = 'name already used';
             }else{
-                $id = $mosaicModel->create(['name'=>$name, 'array'=>$array, 'date'=>$date]);
+                $id = $mosaicModel->create(['name'=>$name, 'array'=>$array, 'time'=>$time]);
                 $result['status'] = 'true';
                 $result['message'] = 'create';
                 $result['id'] = (string)$id;
