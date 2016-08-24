@@ -3,6 +3,10 @@
  */
 
 
+var time = 0;
+setInterval(function() {
+    time = time + 1000;
+}, 1000);
 $( ".cell20" ).on( "click", function() {
     if($( this ).hasClass('blank')){
         $( this ).removeClass('blank').addClass('red');
@@ -99,6 +103,7 @@ $('.mosaicloader').on('click', function () {
                 }
             }
             $('#id').val(data['_id']);
+            time = 0;
         }
     });
 
@@ -125,14 +130,14 @@ $('#form').on('submit', function () {
 });
 
 function update(id) {
-    $.post("/ajax/update", { id: id, array: elToArray },
+    $.post("/ajax/update", { id: id, array: elToArray, time : time },
         function(data){
             alert(data);
         }
     );
 }
 function create(name) {
-    $.post("/ajax/update", { id: '', name: name, array: elToArray },
+    $.post("/ajax/update", { id: '', name: name, array: elToArray, time : time },
         function(data){
             alert(data);
         }
