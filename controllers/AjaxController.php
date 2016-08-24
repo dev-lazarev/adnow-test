@@ -66,7 +66,7 @@ class AjaxController extends Controller
         $array = Yii::$app->request->post('array', []);
 
         $mosaicModel = new Mosaic();
-        if(!empty($id)){
+        if(empty($id)){
             if(!empty($mosaicModel->getFromName($name))){
                 $result['error'] = 'name already used';
             }else{
