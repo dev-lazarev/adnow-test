@@ -23,12 +23,10 @@ $( ".cell20" ).on( "click", function() {
     }
 });
 
-$('#save').on('click', function () {
-    var array = [];
-    var className = '';
-    var idElement  = $('#id');
-    var formElement  = $('#form');
-    var id  = $('#id').val();
+
+function elToArray() {
+    var array=[];
+    var className='';
     for (var i=0;i<20;i++){
         array[i] = [];
         for (var j=0;j<20;j++){
@@ -50,14 +48,43 @@ $('#save').on('click', function () {
             array[i][j] = className;
         }
     }
+    return array;
+}
+$('#save').on('click', function () {
+    var array = [];
+
+    var idElement  = $('#id');
+    var formElement  = $('#form');
+    var id  = idElement.val();
+
     console.log(array);
 
     if(id==''){
         formElement.show();
+    }else{
+        update(id);
     }
 });
 
 $('#form').on('submit', function () {
     console.log(123);
+    var nameElement  = $('#name');
+    var name  = nameElement.val();
+    create(name);
     return false;
 });
+
+function update(id) {
+    $.post("/ajax/update", { id: id, array: elToArray },
+        function(data){
+            alert(data);
+        }
+    );
+}
+function create(name) {
+    $.post("/ajax/update", { id: '', name: name, array: elToArray },
+        function(data){
+            alert(data);
+        }
+    );
+}
