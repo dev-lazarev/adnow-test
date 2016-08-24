@@ -76,13 +76,14 @@ $('.mosaicloader').on('click', function () {
         data: { id: id },
         success: function(data){
             var arr = data.array.split(",");
-            console.log(arr);
+
             var e = '';
             for (var i=0;i<20;i++){
 
                 for (var j=0;j<20;j++){
                     e = arr.shift();
-                    $( '#i'+i+'j'+j ).removeClass('blank').removeClass('red').removeClass('yellow').removeClass('green');
+                    var el = $( '#i'+i+'j'+j );
+                    el.removeClass('blank').removeClass('red').removeClass('yellow').removeClass('green');
                     if(e=='b'){
                         el.addClass('blank')
                     }
