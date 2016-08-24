@@ -45,7 +45,7 @@ class Mosaic extends AbstractMongoModel
                 }
             }
         }
-        $update['$inc']['time'] = $data['time'];
+        $update['$inc']['time'] = (int)$data['time'];
         $update['$set']['updatedate'] = new \MongoDB\BSON\UTCDateTime(microtime(true));
 
         $this->write(
@@ -72,7 +72,7 @@ class Mosaic extends AbstractMongoModel
                 }
             }
         }
-        $update['$inc']['time'] = $data['time'];
+        $update['time'] = (int)$data['time'];
         $update['createdate'] = new \MongoDB\BSON\UTCDateTime(microtime(true));
 
         $id = $this->insert(
