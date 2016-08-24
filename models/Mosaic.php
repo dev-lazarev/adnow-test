@@ -73,11 +73,9 @@ class Mosaic extends AbstractMongoModel
         }
         $update['createdate'] = new \MongoDB\BSON\UTCDateTime(microtime(true));
 
-        $result = $this->insert(
+        $id = $this->insert(
             $update
         );
-
-
 
         return $id;
     }
