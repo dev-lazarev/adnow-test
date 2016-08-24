@@ -59,7 +59,7 @@ $this->title = 'My Yii Application';
                         <tr>
                             <th><?=$mosaic->name?></th>
                             <th><?=$mosaic->createdate?></th>
-                            <th><?=isset($mosaic->date)?$mosaic->date:'-'?></th>
+                            <th><?=isset($mosaic->updatedate)?$mosaic->updatedate:'-'?></th>
                             <th><?=isset($mosaic->time)?$mosaic->time:'-'?></th>
                             <th>
                                 <span class="glyphicon glyphicon-download mosaicloader" data-id="<?=(string)$mosaic->_id?>" aria-hidden="true"></span><br />
