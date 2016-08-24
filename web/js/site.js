@@ -75,7 +75,7 @@ $('.mosaicloader').on('click', function () {
         url: 'ajax/get',
         data: { id: id },
         success: function(data){
-            var arr = data.array;
+            var arr = data.array.split(",");
             console.log(arr);
             var e = '';
             for (var i=0;i<20;i++){
