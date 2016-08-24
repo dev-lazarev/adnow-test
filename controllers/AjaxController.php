@@ -49,6 +49,7 @@ class AjaxController extends Controller
 
 
         if (!empty($mosaic)) {
+            $mosaic->_id = (string)$mosaic->_id;
             echo json_encode($mosaic);
         } else {
             echo json_encode($result);
