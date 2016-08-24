@@ -98,7 +98,7 @@ $('.mosaicloader').on('click', function () {
                     }
                 }
             }
-            console.log(data);
+            $('#id').val(data['_id']);
         }
     });
 
