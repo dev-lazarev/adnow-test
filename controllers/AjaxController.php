@@ -77,7 +77,7 @@ class AjaxController extends Controller
                 $result['id'] = (string)$id;
             }
         }else{
-            $mosaicModel->update(new \MongoDB\BSON\ObjectID($id), ['array'=>$array]);
+            $mosaicModel->update(new \MongoDB\BSON\ObjectID($id), ['array'=>$array, 'time'=>$time]);
             $result['status'] = 'true';
             $result['message'] = 'update';
         }
