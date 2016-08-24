@@ -57,10 +57,10 @@ $this->title = 'My Yii Application';
                     foreach ($mosaics as $mosaic){
                         ?>
                         <tr>
-                            <th><?=$mosaic['name']?></th>
-                            <th><?=$mosaic['createdate']?><</th>
-                            <th><?=isset($mosaic['date'])?$mosaic['date']:'-'?></th>
-                            <th><?=isset($mosaic['time'])?$mosaic['time']:'-'?></th>
+                            <th><?=$mosaic->name?></th>
+                            <th><?=$mosaic->createdate?><</th>
+                            <th><?=isset($mosaic->date)?$mosaic->date:'-'?></th>
+                            <th><?=isset($mosaic->time)?$mosaic->time:'-'?></th>
                             <th><span class="glyphicon glyphicon-load" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
                         </tr>
                     <?php
