@@ -75,6 +75,7 @@ $('.mosaicloader').on('click', function () {
         .done(function( data ) {
 
             var arr = data.array;
+            console.log(arr);
             var e = '';
             for (var i=0;i<20;i++){
 
