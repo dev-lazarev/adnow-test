@@ -80,7 +80,8 @@ class Mosaic extends AbstractMongoModel
         $id = null;
 
         foreach ($result->getUpsertedIds() as $index => $id) {
-
+            print_r($id);
+            print_r($index);
         }
 
         return $id;
