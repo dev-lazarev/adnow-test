@@ -22,3 +22,11 @@ $( ".cell20" ).on( "click", function() {
         return;
     }
 });
+
+$('#save').on('click', function () {
+    console.log(333);
+});
+
+$('#form').on('submit', function () {
+    console.log(123);
+});

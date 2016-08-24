@@ -28,7 +28,15 @@ $this->title = 'My Yii Application';
                     echo "<br />";
                 }
                 ?>
-                <p><a class="btn btn-default" href="#">save</a></p>
+                <p><a class="btn btn-default" href="#" id="save">save</a></p>
+
+                <form class="form-inline" id="form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">name</label>
+                        <input type="text" class="form-control" id="name" placeholder="name">
+                    </div>
+                    <button type="submit" class="btn btn-default">ok</button>
+                </form>
             </div>
             <div class="col-lg-6">
                 <h2>list</h2>
