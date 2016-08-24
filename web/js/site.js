@@ -1,0 +1,24 @@
+/**
+ * Created by Lazarev Aleksey on 24.08.16.
+ */
+
+
+$( ".cell20" ).on( "click", function() {
+    if($( this ).hasClass('blank')){
+        $( this ).removeClass('blank').addClass('red');
+        return;
+    }
+
+    if($( this ).hasClass('red')){
+        $( this ).removeClass('red').addClass('yellow');
+        return;
+    }
+    if($( this ).hasClass('yellow')){
+        $( this ).removeClass('yellow').addClass('green');
+        return;
+    }
+    if($( this ).hasClass('green')){
+        $( this ).removeClass('green').addClass('blank');
+        return;
+    }
+});
