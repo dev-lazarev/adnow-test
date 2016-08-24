@@ -72,12 +72,14 @@ abstract class AbstractMongoModel
     {
 
         $bulk = new \MongoDB\Driver\BulkWrite;
-        $bulk->insert(
+        $id = $bulk->insert(
             $newObj
         );
 
         $writeConcern = new \MongoDB\Driver\WriteConcern(\MongoDB\Driver\WriteConcern::MAJORITY, 1000);
-        return $this->getDb()->executeBulkWrite($this->getBase() . '.' . $this->getCollection(), $bulk, $writeConcern);
+        $this->getDb()->executeBulkWrite($this->getBase() . '.' . $this->getCollection(), $bulk, $writeConcern);
+
+        return $id;
     }
 
     public function remove($filter, $options = [])
