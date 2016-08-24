@@ -70,10 +70,11 @@ $('#save').on('click', function () {
 $('.mosaicloader').on('click', function () {
     var id = $( this ).data('id');
 
-
-    $.get( "ajax/get", { id: id } )
-        .done(function( data ) {
-
+    $.ajax({
+        dataType: 'json',
+        url: 'ajax/get',
+        data: { id: id },
+        success: function(data){
             var arr = data['array'];
             console.log(data);
             var e = '';
@@ -97,7 +98,9 @@ $('.mosaicloader').on('click', function () {
                 }
             }
             console.log(data);
-        });
+        }
+    });
+
 });
 
 $('#form').on('submit', function () {
