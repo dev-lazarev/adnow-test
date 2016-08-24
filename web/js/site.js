@@ -107,7 +107,7 @@ $('.mosaicloader').on('click', function () {
 $('.mosaicremove').on('click', function () {
     var id = $( this ).data('id');
 
-    $.post("/ajax/remove", { id: id},
+    $.post("/ajax/delete", { id: id},
         function(data){
             alert(data);
         }
